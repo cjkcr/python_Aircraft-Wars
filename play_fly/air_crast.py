@@ -15,7 +15,7 @@ screen = pygame.display.set_mode(SCREEN_SIZE.size, 0, 0)
 
 
 def getff():
-    print "sssssssssssssssssssssssssssss"
+    print (sssssssssssssssssssssssssssss)
 
 
 def main():
@@ -74,7 +74,7 @@ def main():
                         groups_over.add(over)
 
             elif event.type == Bullet:
-                print "bullet"
+                print (Bullet)
                 if a:
                     bullet = GSpriteBullet("./feiji/bullet.png", hero.rect.x + 40)
                     groups_bullet.add(bullet)
