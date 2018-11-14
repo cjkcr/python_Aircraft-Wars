@@ -8,11 +8,13 @@ class GameSprite(pygame.sprite.Sprite):
         super().__init__()
 
 #宝义对像的属性
-        self.image = pygame.image.load()
+        self.image = pygame.image.load(image_name)
         self.rect = self.image.get_rect()
         self.speed =speed
 
 
 
-    def update(self, *args):
-#
+    def update(self):
+#在屏慕上移动
+        self.rect.y +=self.speed
+        # self.rect.x +=self.speed

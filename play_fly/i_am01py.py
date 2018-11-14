@@ -1,4 +1,7 @@
 import pygame
+from iamplane_sprites import *
+
+
 
 # 初始化
 pygame.init()
@@ -24,14 +27,21 @@ hero=pygame.image.load('./feiji/hero1.png')
 #
 screen.blit(hero,(150,300))
 
-
-
-
-
 # 创建时钟
 clock = pygame.time.Clock()
 # 1，定义飞机的初始位置
 hero_rect = pygame.Rect(150,300,100,124)
+#创建敌机的精灵
+enemy = GameSprite('./feiji/enemy0.png')
+enemy1 =GameSprite('./feiji/enemy1.png',2)
+
+#创建敌机精灵组
+
+enemy_group = pygame.sprite.Group(enemy,enemy1)
+
+
+
+
 
 
 while True:
@@ -64,6 +74,14 @@ while True:
     screen.blit(bg,(0,0))
 # 刷新飞机
     screen.blit(hero,hero_rect)
+
+#让精灵组调用二个方法
+#update 让组中的所有精灵更新位置
+    enemy_group.update()
+#draw 在screen上绘制所有的
+    enemy_group.draw(screen)
+
+
 # 最后只调用一次更新显示
     pygame.display.update()
 
